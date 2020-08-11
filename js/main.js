@@ -16,49 +16,60 @@ let board;
 let turn;
 let winner;
 
-
-
-
+ const columnArr =  [
+   [35,28,21,14],
+   [36,29,22,15,],
+   []
+ ]
 
 //------------------------cached elements----------------------//
 
 const messageEl = document.querySelector('#msg');
-const circlesEl = document.querySelectorAll('td div');
+const circlesEls = document.querySelectorAll('td');
 //might need varaible for just columns to listen to instead of individual circles
 
 
 //-----------------------event listeners----------------------//
 
-//document.querySelector('.gameBoard').addEventListener('click');
-//document.querySelector('button').addEventListener('click', init);
+document.querySelector('.gameBoard').addEventListener('click', handleMove);
+document.querySelector('button').addEventListener('click', init);
 
 
 //-----------------------functions----------------------------//
+
+init();
 
 function init() {
   board = new Array(42).fill(null);
   turn = 1;
   winner = null;
-  //call render
-}
-// init();
-// console.log(board);
+  render();
+};
 
-//render
+function render(){
+  circlesEls.forEach(function(cir) {
+    let cellIdx = cir.id.replace("c", "");
+    cir.style.backgroundColor = colorChange[board[cellIdx]];
+  });
+  //add turn message 
+};
 
-
-
-
-
-
-
-
-//function handleMove(evt){
-  //find index of idividual circle or JUST column?
-  //check to see if available if not return
-  //fill spot closest to the bottom (highest number)<-HOW?!
-  //fill with correct player
-  //update turn
-  //call render
-
-//}
+ 
+function handleMove(evt){
+  // find index of idividual circle or JUST column?
+  let colIdx = parseInt(evt.target.id.replace("c", ""));
+  //converting to column
+  colIdx = Math.floor(colIdx / 6);
+  if ( isNaN(colIdx) ) return;
+  //compute index at bottom of column
+  let bottomColIdx = colIdx * 6;
+  //find first null in column
+  let offSet;
+  for ( offSet = 0; offSet < 6 ; offSet++ )  {
+    if ( board[bottomColIdx + offSet] === null) break;
+  }
+  if ( offSet === 6 ) return;
+  board[bottomColIdx + offSet] = turn;
+  turn *= -1;
+  render();
+ }
