@@ -16,18 +16,15 @@ let board;
 let turn;
 let winner;
 
-
 //------------------------cached elements----------------------//
 
 const messageEl = document.querySelector('#msg');
 const circlesEls = document.querySelectorAll('td');
 
-
 //-----------------------event listeners----------------------//
 
 document.querySelector('.gameBoard').addEventListener('click', handleMove);
 document.querySelector('button').addEventListener('click', init);
-
 
 //-----------------------functions----------------------------//
 
@@ -55,9 +52,8 @@ function render(){
     messageEl.textContent = `Player ${colorChange[turn]} turn!`;
   }
   
-  };
+  }
 
- 
 function handleMove(evt){
   // find index of idividual  "board index"
   let colIdx = parseInt(evt.target.id.replace("c", ""));
@@ -76,8 +72,7 @@ function handleMove(evt){
   turn *= -1;
   winner = checkWinner();
   render();
- }
-
+ };
 
  function checkWinner(){
    for(let i= 0; i < winningCombos.length; i++) {
