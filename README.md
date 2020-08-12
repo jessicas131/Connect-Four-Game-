@@ -15,20 +15,20 @@ ______
 ### Game Play Images
 
 ### Opening Screen
-<img src="images/Black_Player_Turn.png" width="250px" height="250px">
+<img src="images/Black_Player_Turn.png" width="350px" height="350px">
 
 ### Turns Are Indicated at Top of Screen
-<img src="images/Red_Player_Turn.png" width="250px" height="250px">
+<img src="images/Red_Player_Turn.png" width="350px" height="350px">
 
-<img src="images/Black_Player_Turn.png" width="250px" height="250px">
+<img src="images/Black_Player_Turn.png" width="350px" height="350px">
 
 ### The Winner is also Indicated
-<img src="images/Black_Wins.png" width="250px" height="250px">
+<img src="images/Black_Wins.png" width="350px" height="350px">
 
-<img src="images/Red_Wins.png" width="250px" height="250px">
+<img src="images/Red_Wins.png" width="350px" height="350px">
 
 ### Message for Ties
-<img src="images/Tie.png" width="250px" height="250px">
+<img src="images/Tie.png" width="350px" height="350px">
 
 _____
 
