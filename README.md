@@ -15,7 +15,7 @@ ______
 ### Game Play Images
 
 ### Opening Screen
-<img src="images/Black_Player_Turn.png" width="350px" height="350px">
+<img src="images/Game Opening Screen.png" width="350px" height="350px">
 
 ### Turns Are Indicated at Top of Screen
 <img src="images/Red_Player_Turn.png" width="350px" height="350px">
